@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Page Layout</title> 
+    <style> 
+        .head1 { 
+            font-size:40px; 
+            color:#009900; 
+            font-weight:bold; 
+        } 
+        .head2 { 
+            font-size:17px; 
+            margin-left:10px; 
+            margin-bottom:15px; 
+        } 
+        body { 
+            margin: 0 auto; 
+            background-position:center; 
+            background-size: contain; 
+        } 
+      
+        .menu {    
+            position: sticky; 
+            top: 0; 
+            background-color: #009900; 
+            padding:10px 0px 10px 0px; 
+            color:white; 
+            margin: 0 auto; 
+            overflow: hidden; 
+        } 
+        .menu a { 
+            float: left; 
+            color: white; 
+            text-align: center; 
+            padding: 14px 16px; 
+            text-decoration: none; 
+            font-size: 20px; 
+        } 
+        .menu-log { 
+            right: auto; 
+            float: right; 
+        } 
+        footer { 
+            width: 100%; 
+            bottom: 0px; 
+            background-color: #000; 
+            color: #fff; 
+            position: absolute; 
+            padding-top:20px; 
+            padding-bottom:50px; 
+            text-align:center; 
+            font-size:30px; 
+            font-weight:bold; 
+        } 
+        .body_sec { 
+            margin-left:20px; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+      
+    <!-- Header Section -->
+    <header> 
+        <div class="head1">Notes </div> 
+    </header> 
+      
+    <!-- Menu Navigation Bar -->
+    <div class="menu"> 
+        <a href="#home">HOME</a> 
+        <a href="#news">NEWS</a> 
+        </div> 
+    </div> 
+      
+<div class="container">
+    <hr>
+    <h1>List of Notes</h1>
+    <hr>
+    <div>
+        <div class="row" id="notes">
+        </div>
+    </div>
+</div>
+
+<div id="editBookModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Notes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="editForm" method="POST">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input class="form-control" name="isbn" id="isbn">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <input class="form-control" name="title" id="title">
+                    </div>
+
+                    <!--Other fields-->
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Footer Section -->
+  <footer>Footer Section</footer> 
+</body> 
+</html> 
+<!--Our JS file-->
+<script src="notes-api.js"></script>

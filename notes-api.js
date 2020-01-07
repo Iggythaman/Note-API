@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 // Where we will keep notes
 let notes = [];
@@ -20,6 +20,8 @@ app.post('/notes', (req, res) => {
     // outputing the notes to the console for debugging
     console.log(note);
     notes.push(note);
+
+    res.send('Notes are added to the database');
 });
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(port, () => console.log(`notes ${port}!`));
