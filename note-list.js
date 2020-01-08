@@ -2,9 +2,17 @@ const setEditModal = (id) => {
     // We will implement this later
 }
 
-const deleteNotes = (id) => {
-    // We will implement this later
+const deleteNote = (id) => {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.open("DELETE", `http://localhost:3000/book/${id}`, false);
+    xhttp.send();
+
+    // Reloading the page
+    location.reload();
 }
+
+
 
 const loadNotes = () => {
     const xhttp = new XMLHttpRequest();
